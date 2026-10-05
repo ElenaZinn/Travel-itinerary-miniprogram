@@ -1,0 +1,203 @@
+/* pages/home/home.wxss — read-only month calendar and day list */
+
+.page {
+  min-height: 100vh;
+  background: var(--bg-page);
+}
+
+.top-nav {
+  background: #102945;
+  color: #fff;
+  padding: 0 24rpx 24rpx;
+}
+
+.top-nav .title {
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.content {
+  padding-top: 24rpx;
+}
+
+.content-state {
+  text-align: center;
+  color: var(--text-hint);
+  font-size: 26rpx;
+  padding: 60rpx 0;
+}
+
+.calendar-card {
+  margin: 0 24rpx 24rpx;
+  padding: 24rpx;
+}
+
+.month-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12rpx 20rpx;
+}
+
+.month-head .arrow {
+  font-size: 44rpx;
+  color: var(--text-hint);
+  padding: 0 20rpx;
+}
+
+.month-head .year {
+  font-size: 26rpx;
+  color: var(--text-hint);
+  text-align: center;
+}
+
+.month-head .month {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: var(--text-main);
+  text-align: center;
+}
+
+.week-row {
+  display: flex;
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx solid var(--border);
+}
+
+.week-row text {
+  flex: 1;
+  text-align: center;
+  font-size: 22rpx;
+  color: var(--text-hint);
+}
+
+.days-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.day-row {
+  display: flex;
+}
+
+.day-cell-inner {
+  flex: 1;
+  min-height: 96rpx;
+  padding: 8rpx 4rpx;
+  border-bottom: 1rpx solid var(--border);
+  border-right: 1rpx solid var(--border);
+}
+
+.day-cell-inner.has-event {
+  background: #f3fbf9;
+}
+
+.day-num {
+  display: block;
+  font-size: 22rpx;
+  color: var(--text-main);
+}
+
+.day-cell-inner.ghost .day-num {
+  color: #c7ccd4;
+}
+
+.event-chip {
+  display: block;
+  margin-top: 4rpx;
+  font-size: 18rpx;
+  line-height: 1.25;
+  color: #00b7a4;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.day-tabs {
+  display: flex;
+  gap: 20rpx;
+  padding: 0 24rpx 20rpx;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.chip {
+  padding: 10rpx 22rpx;
+  border-radius: 40rpx;
+  background: var(--bg-card);
+  color: #6b7382;
+  font-size: 26rpx;
+  flex-shrink: 0;
+}
+
+.chip.active {
+  background: #1b324b;
+  color: #fff;
+}
+
+.list-wrap {
+  padding: 0 24rpx;
+}
+
+.day-label {
+  padding: 0 4rpx 16rpx;
+  font-size: 28rpx;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.item-card {
+  background: var(--bg-card);
+  border-radius: 24rpx;
+  padding: 26rpx;
+  margin-bottom: 24rpx;
+  box-shadow: var(--shadow);
+}
+
+.item-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #16293f;
+}
+
+/* Each stop shows only a title and a location */
+.item-loc {
+  margin-top: 12rpx;
+  font-size: 26rpx;
+  line-height: 1.6;
+  color: #3f4e62;
+}
+
+.item-loc-pin {
+  margin-right: 8rpx;
+  font-size: 24rpx;
+}
+
+/* Content truncation hint: the dashed block fills the leftover space and points to the full app */
+.more-hint {
+  margin-bottom: 40rpx;
+  padding: 56rpx 32rpx;
+  min-height: 240rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2rpx dashed #d6dce4;
+  border-radius: 24rpx;
+  background: #fafbfc;
+  text-align: center;
+}
+
+.more-hint-title {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #6b7382;
+}
+
+.more-hint-sub {
+  margin-top: 14rpx;
+  font-size: 24rpx;
+  line-height: 1.6;
+  color: var(--text-hint);
+}

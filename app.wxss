@@ -1,0 +1,33 @@
+/* app.wxss — design tokens and shared layout */
+
+page {
+  --primary: #14e6cf;
+  --bg-page: #eceff3;
+  --bg-card: #ffffff;
+  --text-main: #1f2530;
+  --text-sub: #6c7481;
+  --text-hint: #9aa3b2;
+  --border: #edf1f6;
+  --shadow: 0 4rpx 12rpx rgba(15, 37, 56, 0.06);
+
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 28rpx;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+view,
+text,
+scroll-view,
+button,
+input,
+textarea {
+  box-sizing: border-box;
+}
+
+/* Keep content clear of the tab bar and the home indicator */
+.safe-bottom {
+  padding-bottom: calc(env(safe-area-inset-bottom) + 120rpx);
+}

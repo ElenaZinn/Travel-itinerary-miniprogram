@@ -1,0 +1,46 @@
+<view class="page safe-bottom">
+  <view class="header" style="padding-top: {{statusBarHeight}}px;">
+    <view class="header-title">Choose a destination</view>
+    <view class="header-subtitle">Demo data — the production app loads destinations from the cloud</view>
+  </view>
+
+  <view class="dest-tabs">
+    <view class="dest-tab {{activeTab==='available' ? 'active' : ''}}" data-tab="available" bind:tap="switchTab">
+      Available<text class="dest-tab-count">{{availableList.length}}</text>
+    </view>
+    <view class="dest-tab {{activeTab==='soon' ? 'active' : ''}}" data-tab="soon" bind:tap="switchTab">
+      Coming Soon<text class="dest-tab-count">{{soonList.length}}</text>
+    </view>
+    <view class="dest-tab-indicator" style="left: {{activeTab === 'available' ? '0' : '50%'}}">
+      <view class="dest-tab-indicator-bar"></view>
+    </view>
+  </view>
+
+  <view class="destination-list">
+    <view
+      wx:for="{{activeTab === 'available' ? availableList : soonList}}"
+      wx:key="id"
+      class="destination-item {{item.disabled ? 'disabled' : ''}}"
+      bind:tap="selectDestination"
+      data-id="{{item.id}}"
+      data-disabled="{{item.disabled}}"
+    >
+      <view class="destination-content">
+        <view class="destination-flag">
+          <text wx:for="{{item.flags}}" wx:for-item="fg" wx:for-index="fi" wx:key="fi" class="destination-flag-emoji">{{fg}}</text>
+        </view>
+        <view class="destination-info">
+          <view class="destination-name">{{item.name}}</view>
+        </view>
+      </view>
+      <view wx:if="{{item.disabled}}" class="coming-soon-tag">Coming Soon</view>
+      <view wx:else class="arrow-icon">›</view>
+    </view>
+  </view>
+
+  <!-- The demo ships only two destinations: this dashed block fills the leftover space and points to the full app -->
+  <view class="footer-hint">
+    <view class="footer-hint-title">This demo ships 2 destinations</view>
+    <view class="footer-hint-sub">The full destination list and complete itineraries are available in the full app.</view>
+  </view>
+</view>

@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/destination/destination",
+    "pages/home/home"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "Travel Itinerary",
+    "navigationBarBackgroundColor": "#102945",
+    "backgroundColor": "#eceff3"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#14e6cf",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/destination/destination",
+        "text": "Destinations"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "Itinerary"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

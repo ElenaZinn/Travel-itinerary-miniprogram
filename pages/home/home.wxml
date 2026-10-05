@@ -1,0 +1,63 @@
+<view class="page">
+  <view class="top-nav" style="padding-top: {{statusBarHeight}}px;">
+    <text class="title">{{destinationName}}</text>
+  </view>
+
+  <scroll-view scroll-y class="content safe-bottom">
+    <view wx:if="{{loading}}" class="content-state">Loading...</view>
+
+    <block wx:else>
+      <view class="calendar-card">
+        <view class="month-head">
+          <text class="arrow" bind:tap="prevMonth">‹</text>
+          <view wx:if="{{currentMonth}}">
+            <view class="month">{{currentMonth.name}}</view>
+            <view class="year">{{currentMonth.year}}</view>
+          </view>
+          <text class="arrow" bind:tap="nextMonth">›</text>
+        </view>
+        <view class="week-row">
+          <text wx:for="{{week}}" wx:key="*this">{{item}}</text>
+        </view>
+        <view class="days-grid">
+          <view class="day-row" wx:for="{{cellsLayout}}" wx:for-item="row" wx:for-index="ri" wx:key="ri">
+            <view
+              class="day-cell-inner {{cell.inMonth ? '' : 'ghost'}} {{cell.hasEvent ? 'has-event' : ''}}"
+              wx:for="{{row}}"
+              wx:for-item="cell"
+              wx:for-index="ci"
+              wx:key="date"
+            >
+              <text class="day-num">{{cell.day}}</text>
+              <text class="event-chip" wx:for="{{cell.titles}}" wx:for-item="t" wx:for-index="ti" wx:key="ti">{{t}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="day-tabs">
+        <view
+          class="chip {{activeDay === item.day ? 'active' : ''}}"
+          wx:for="{{dayTabs}}"
+          wx:key="day"
+          data-day="{{item.day}}"
+          bind:tap="switchDay"
+        >D{{item.day}}</view>
+      </view>
+
+      <view class="list-wrap">
+        <view class="day-label" wx:if="{{listEvents.length}}">{{listEvents[0].dayLabel}} · {{listEvents[0].date}}</view>
+        <view class="item-card" wx:for="{{listEvents}}" wx:key="id">
+          <view class="item-title">{{item.title}}</view>
+          <view class="item-loc"><text class="item-loc-pin">📍</text>{{item.location}}</view>
+        </view>
+
+        <!-- The demo truncates content on purpose: this block fills the leftover space and points to the full app -->
+        <view class="more-hint">
+          <view class="more-hint-title">This demo shows 3 stops per itinerary</view>
+          <view class="more-hint-sub">Complete itineraries, more destinations and travel guides are available in the full app.</view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
