@@ -42,7 +42,7 @@ That leaves a lot of empty space on screen, which is where the dashed hint point
 ## Quick start
 
 1. WeChat DevTools → *Import project* → pick this repository root
-2. `appid` in `project.config.json` is `touristappid` (WeChat's test account) — just compile
+2. `appid` in `project.config.json` is `touristappid` — WeChat's placeholder for projects without an appid. No real appid or cloud credentials ship with this repo; just compile
 3. No cloud configuration required
 
 ## Project structure
@@ -103,7 +103,7 @@ MIT
 ## 快速开始
 
 1. 微信开发者工具 → 导入项目 → 选本仓库根目录
-2. `project.config.json` 里的 `appid` 是 `touristappid`（微信测试号），直接编译即可
+2. `project.config.json` 里的 `appid` 是 `touristappid` —— 微信给「没有 AppID 的项目」的固定占位值。本仓库不含任何真实 AppID 或云凭据，直接编译即可
 3. 无需任何云端配置
 
 ## 目录结构
