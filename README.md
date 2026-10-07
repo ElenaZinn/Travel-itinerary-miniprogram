@@ -8,6 +8,10 @@ A WeChat Mini Program that shows one way to organise a trip itinerary:
 > This is a **trimmed demo** built to show page structure and interaction design.
 > It ships no cloud backend, no entitlement system, no export features and no real itinerary data.
 
+
+## Video
+https://www.youtube.com/watch?v=8AFlFVD3FTU
+
 ## What it demonstrates
 
 - **Destinations** — Available / Coming Soon tabs with an underline indicator
