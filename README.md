@@ -12,6 +12,10 @@ A WeChat Mini Program that shows one way to organise a trip itinerary:
 ## Video
 https://www.youtube.com/watch?v=8AFlFVD3FTU
 
+## QR code
+<img width="258" height="258" alt="gh_90f86dc56e26_258" src="https://github.com/user-attachments/assets/5a59aa1a-b7c9-4acc-8324-80be4b8a3e55" />
+
+
 ## What it demonstrates
 
 - **Destinations** — Available / Coming Soon tabs with an underline indicator
